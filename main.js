@@ -5,7 +5,6 @@ const container = document.querySelector(".container");
 const textarea = document.querySelector(".editor textarea");
 const button = document.getElementById("createNote");
 
-
 function createDiv(text) {
   const div = document.createElement("div");
   div.textContent = text;
@@ -18,14 +17,12 @@ const hash = window.location.hash.slice(1);
 if (hash) {
   try {
     const note = decode(hash);
-
     //note html
     document.body.innerHTML = `
       <main style="
         width:min(720px,100%);
         margin:auto;
-        padding:2rem 2rem;
-      ">
+        padding:2rem 2rem;">
         <div style="
           background:white;
           border-radius:28px;
@@ -34,8 +31,7 @@ if (hash) {
           white-space:pre-wrap;
           word-break:break-word;
           font-size:1.15rem;
-          line-height:1.8;
-        ">
+          line-height:1.8;">
           ${createDiv(note)}
         </div>
 
@@ -53,7 +49,7 @@ if (hash) {
   }
 }
 
-// expand and collapse the editor area based on user interaction
+//expand and collapse the editor area based on user interaction
 const expand = () => {
   container.classList.add("expanded");
 };
@@ -65,9 +61,7 @@ const collapse = () => {
 };
 
 container.addEventListener("click", expand);
-
 textarea.addEventListener("focus", expand);
-
 textarea.addEventListener("blur", () => {
   setTimeout(collapse, 150);
 });
@@ -82,12 +76,10 @@ button.addEventListener("click", async () => {
   }
 
   const encoded = encode(text);
-
   const url =
     window.location.origin +
     window.location.pathname +
-    "#" +
-    encoded;
+    "#" + encoded;
 
   try {
     await navigator.clipboard.writeText(url);
@@ -95,7 +87,6 @@ button.addEventListener("click", async () => {
     const originalText = button.textContent;
 
     button.textContent = "Copied!";
-
     setTimeout(() => {
       button.textContent = originalText;
     }, 2000);
