@@ -1,8 +1,9 @@
 //Created by Adam Kurbiel
 import { decode, encode } from "./coding.js";
+import { greetings } from "./greetings.js";
 
 const container = document.querySelector(".container");
-const textarea = document.querySelector(".editor textarea");
+const textarea = document.getElementById("textarea");
 const button = document.getElementById("createNote");
 
 function createDiv(text) {
@@ -94,3 +95,7 @@ button.addEventListener("click", async () => {
     prompt("Copy this link:", url);
   }
 });
+
+//random greetings
+var chosen = Math.floor(Math.random() * greetings.length);
+textarea.placeholder = greetings[chosen];
