@@ -9,11 +9,15 @@
 <body>
     <header>
         <h1>interimNotes</h1>
+        <p>Notes up to 1000 characters. Save and share for 3 days.</p>
     </header>
-    <div class="container">
+    <div class="container collapsed">
         <div class="editor">
-            <input type="text" id="note">
+            <textarea placeholder="Click here to write a new note..."></textarea>
         </div>
+        <button id="createNote">Create new note</button>
     </div>
+    <div class="watermark">Created by Adam Kurbiel</div>
+    <script src="app.js"></script>
 </body>
 </html>
