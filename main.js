@@ -36,7 +36,7 @@ if (hash) {
           ${createDiv(note)}
         </div>
 
-        <p><a href="https://adamkurbiel.github.io/displayanything">displayAnything</a> created by <a href="https://github.com/adamkurbiel"> Adam Kurbiel</a></p>
+        <p><a href="https://adamkurbiel.github.io/displayAnything">displayAnything</a> created by <a href="https://github.com/adamkurbiel"> Adam Kurbiel</a></p>
       </main>
     `;
 
